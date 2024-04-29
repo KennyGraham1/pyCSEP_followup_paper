@@ -19,7 +19,7 @@ We provide the user with options to run Jupyter Notebooks
 * [Using the Notebooks](#notebook-description)
 * [Software versions](#software-versions)
 * [Computational effort](#computational-effort)
-* [References](#references)
+<!-- * [References](#references) -->
 
 
 ## Instructions
@@ -70,7 +70,7 @@ To reproduce the _full_ version, call:
 
 When finished, the figures will be stored in `./output`. These can be compared against the expected results that are found in the `expected_results` directory.
 
-The `start_docker.sh` or `start_docker.bat` scripts provide an interactive terminal to re-create individual figures. See [below](#reproduce-figures-individually) for instructions.
+The `start_docker.sh` scripts provide an interactive terminal to re-create individual figures. See [below](#reproduce-figures-individually) for instructions.
 
 
 > Note: If you are running Docker on MacOS you might run into permission errors when trying to start (or run) the Docker container. To fix this, manually create the `output` (eg `cd output` and add these to the Docker host.)
@@ -124,12 +124,12 @@ python plot_fig_2.py
 
 ## Code description
 
-The top-level directory contains a few helpful scripts for working with the Docker environment. Descriptions of the files in the top-level directory are as follows (the `.sh` and `.bat` scripts provide the same functionality on different operating systems):
+The top-level directory contains a few helpful scripts for working with the Docker environment. Descriptions of the files in the top-level directory are as follows (the `.sh` scripts provide the functionality on on linux):
 
-* `download_data.{sh|bat}`: downloads and verifies checksums of the data from Zenodo
-* `build_docker.{sh|bat}`: (re)builds the Docker image for this environment
-* `start_docker.{sh|bat}`: starts Docker container and provides command-line interface with pycsep environment active
-* `run_docker.{sh|bat}`: runs the Docker container and automatically launches the package
+* `download_data.sh`: downloads and verifies checksums of the data from Zenodo
+* `build_docker.sh`: (re)builds the Docker image for this environment
+* `start_docker.sh`: starts Docker container and provides command-line interface with pycsep environment active
+* `run_docker.sh`: runs the Docker container and automatically launches the package
 * `entrypoint.sh`: entrypoint for the runnable Docker container
 
 The code to execute the main experiment can be found in the `scripts` directory of this repository. The files are named
@@ -139,12 +139,16 @@ Descriptions of the files in the `scripts` directory are as follows:
 * `plot_fig_1.py`: Plot the Catalog figure
 * `plot_fig_2.py`: Plot GEAR1 model projected to New Zealand
 * `plot_fig_4to6.py`: Plot figure 4 to 6
-            4a.  Pseudo-prospective negative-binomial number test results for four time-invariant seismicity models in New Zealand
-            4b. Binary S-test results for earthquake forecasting models in New Zealand during the 2014-2022 evaluation period
-            5   Quantitative comparisons of earthquake forecasting models for New Zealand based  on a) Poisson and binary joint log-likelihood scores, b) Kagan I1 information scores and c) Brier scores. 
-            6.  a) Receiver Operating Characteristic (ROC) curves, obtained using the alarm-based approach, comparing a Poisson uniform (SUP) seismicity model anddifferent spatially specific time-invariant earthquake forecasting models for New Zealand. 
-               b) ROC concentration curves of the models compared with both the SUP model and GeoNet’s catalogue of observed earthquakes 
-               c) Comparison of Molchan diagrams depicting the predictive performance of models for  NewZealand, including comparisons among themselves and with SUP.
+   * 4a  Pseudo-prospective negative-binomial number test results for four time-invariant seismicity models in New Zealand
+   * 4b. Binary S-test results for earthquake forecasting models in New Zealand during the 2014-2022 evaluation period
+   * 5   Quantitative comparisons of earthquake forecasting models for New Zealand based  on:
+      * a) Poisson and binary joint log-likelihood scores, 
+      * b) Kagan I1 information scores and 
+      * c) Brier scores. 
+   * 6 Evaluating Alarm-Based Models; from Contingency Tables to Area Skill Score 
+      * a) Receiver Operating Characteristic (ROC) curves, obtained using the alarm-based approach, comparing a Poisson uniform (SUP) seismicity model anddifferent spatially specific time-invariant earthquake forecasting models for New Zealand. 
+      * b) ROC concentration curves of the models compared with both the SUP model and GeoNet’s catalogue of observed earthquakes 
+      * c) Comparison of Molchan diagrams depicting the predictive performance of models for  NewZealand, including comparisons among themselves and with SUP.
 
 ## Using the Notebooks
 
@@ -153,7 +157,7 @@ To run the notebooks
 ```
 cd notebooks/
 ```
-> Note: Any script must be launched from within this `scripts` directory.
+> Note: Any jupyter notebook must be launched from within this `notebooks` directory.
 
 Here is an example to open and run the jupyter notebook:
 ```
@@ -167,10 +171,10 @@ Select of the notbooks and play with it.
 
 To obtain the environment used for publishing this manuscript use [Docker](#easy-mode-using-docker). Advanced users can recreate the environment using `conda` running on Ubuntu 20.04 LTS.
 
-
+<!-- 
 ## References
 
 Krafczyk, M. S., Shi, A., Bhaskar, A., Marinov, D., and Stodden, V. (2021).
 Learning from reproducing computational results: introducing three principles and the reproduction package.
 _Philosophical Transactions of the Royal Society A: Mathematical, Physical and Engineering Sciences, 379_(2197).
-doi: [10.1098/rsta.2020.0069](https://doi.org/10.1098/rsta.2020.0069)
+doi: [10.1098/rsta.2020.0069](https://doi.org/10.1098/rsta.2020.0069) -->
