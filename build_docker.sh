@@ -5,5 +5,5 @@ docker build \
 --build-arg USER_UID=$(id -u) \
 --build-arg USER_GID=$(id -g) \
 --no-cache \
--t pycsep_esrl .
+-t pycsep_srl .
 

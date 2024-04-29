@@ -19,6 +19,7 @@ _full_ version to learn about evaluating catalog-based forecasts or working with
       * [Using a conda environment](#using-a-conda-environment)
    * [Reproduce figures individually](#reproduce-figures-individually)
 * [Code description](#code-description)
+* [Using the Notebooks](#notebook-description)
 * [Software versions](#software-versions)
 * [Computational effort](#computational-effort)
 * [References](#references)
@@ -29,12 +30,12 @@ If you have obtained the software from Zenodo, you may skip this step. Make sure
 
 If you are viewing this on GitHub or have not downloaded the code from Zenodo, open a terminal and download the reproducibility package from GitHub with
 ```
-git clone https://github.com/wsavran/pycsep_esrl_reproducibility.git
+git clone https://github.com/KennyGraham1/pyCSEP_followup_paper.git
 ```
 
 Navigate to the newly downloaded directory
 ```
-cd pycsep_esrl_reproducibility
+cd pyCSEP_followup_paper
 ```
 
 ### Run the computational environment
@@ -77,7 +78,7 @@ To reproduce the _full_ version, call:
 > .\run_all.bat --full
 > ```
 
-When finished, the results and figures will be stored in `./results` and `./figures`, respectively. These can be compared against the expected results that are found in the `expected_results` directory.
+When finished, the figures will be stored in `./output`. These can be compared against the expected results that are found in the `expected_results` directory.
 
 The `start_docker.sh` or `start_docker.bat` scripts provide an interactive terminal to re-create individual figures. See [below](#reproduce-figures-individually) for instructions.
 
@@ -86,7 +87,7 @@ of the legacy Hyper-V backend---provided your hardware supports it. This can be 
 Docker's Settings > General > 'Use the WSL 2 based engine'. For more information and how to enable the WSL2 feature
 on your Windows 10/11, see [Docker Desktop WSL 2 backend](https://docs.docker.com/desktop/windows/wsl).
 
-> Note: If you are running Docker on MacOS you might run into permission errors when trying to start (or run) the Docker container. To fix this, manually create the `figures` and `results` directories (eg `cd figures` and `cd results` and add these to the Docker host.)
+> Note: If you are running Docker on MacOS you might run into permission errors when trying to start (or run) the Docker container. To fix this, manually create the `output` (eg `cd output` and add these to the Docker host.)
 
 #### Using a conda environment
 
@@ -94,13 +95,13 @@ Installation instructions can be found in the [pyCSEP documentation](https://doc
 
 Create and activate a new conda environment:
 ```
-conda env create -n pycsep_esrl
-conda activate pycsep_esrl
+conda env create -n pycsep_srl
+conda activate pycsep_srl
 ```
 
-Install v0.5.2 of pyCSEP:
+Install v0.6.3 of pyCSEP:
 ```
-conda install --channel conda-forge pycsep=0.5.2
+conda install --channel conda-forge pycsep=0.6.3
 ```
 
 Download data from Zenodo:
@@ -114,13 +115,13 @@ or (if on Windows):
 
 > Note: to download the _'full'_ version, append ` --full` to the command (see [above](#easy-mode-using-docker))
 
-Run the package to reproduce all figures from the manuscript that are supported by your downloaded version (_lightweight_ or _full_):
+Run the package to reproduce all figures from the manuscript that are supported by your downloaded version
 ```
 cd scripts
 python plot_all.py
 ```
 
-Once completed, the figures can be found in the `figures` directory in the top-level directory and results in the `results` directory. These can be compared against the expected results that are found in the `expected_results` directory.
+Once completed, the figures can be found in the `outpot` directory in the top-level directory. These can be compared against the expected results that are found in the `expected_results` directory.
 
 To recreate individual figures, follow the instructions below.
 
@@ -135,10 +136,8 @@ cd scripts
 
 Here is an example to recreate Fig. 2:
 ```
-python plot_figure2.py
+python plot_fig_2.py 
 ```
-
-If you only downloaded the _lightweight_ version from Zenodo, you will be unable to run `plot_figure3.py` or `plot_figure6.py`.
 
 
 ## Code description
@@ -155,31 +154,36 @@ The code to execute the main experiment can be found in the `scripts` directory 
 according to the figure they create in the manuscript. The script `plot_all.py` will generate all of the figures supported by the downloaded version.
 Descriptions of the files in the `scripts` directory are as follows:
 
-* `plot_all.py`: generates all figures listed below
-* `plot_figure2.py`: plots RELM and Italian time-independent forecasts with the catalog used to evaluate the forecasts
-* `plot_figure3.py`: plots selected catalogs from UCERF3-ETAS forecast (only in _full_ version)
-* `plot_figure4.py`: plots S-test and N-test evaluations for RELM and Italian time-independent forecasts
-* `plot_figure5.py`: plots t-test and W-test evaluations for RELM and Italian time-independent forecasts
-* `plot_figure6.py`: plots S-test and N-test evaluations for UCERF3-ETAS forecasts (only in _full_ version)
-* `plot_figure7.py`: illustrates plotting capabilities and manipulation of gridded forecasts
-* `experiment_utilities.py`: functions and configuration needed to run the above scripts
-* `download_data.py`: downloads data from Zenodo (see DOI link at the top)
+* `plot_fig_1.py`: Plot the Catalog figure
+* `plot_fig_2.py`: Plot GEAR1 model projected to New Zealand
+* `plot_fig_4to6.py`: Plot figure 4 to 6
+            4a.  Pseudo-prospective negative-binomial number test results for four time-invariant seismicity models in New Zealand
+            4b. Binary S-test results for earthquake forecasting models in New Zealand during the 2014-2022 evaluation period
+            5   Quantitative comparisons of earthquake forecasting models for New Zealand based  on a) Poisson and binary joint log-likelihood scores, b) Kagan I1 information scores and c) Brier scores. 
+            6.  a) Receiver Operating Characteristic (ROC) curves, obtained using the alarm-based approach, comparing a Poisson uniform (SUP) seismicity model anddifferent spatially specific time-invariant earthquake forecasting models for New Zealand. 
+               b) ROC concentration curves of the models compared with both the SUP model and GeoNet’s catalogue of observed earthquakes 
+               c) Comparison of Molchan diagrams depicting the predictive performance of models for  NewZealand, including comparisons among themselves and with SUP.
+
+## Using the Notebooks
+
+To run the notebooks 
+
+```
+cd notebooks/
+```
+> Note: Any script must be launched from within this `scripts` directory.
+
+Here is an example to open and run the jupyter notebook:
+```
+jupyter-notebook
+```
+Select of the notbooks and play with it.
 
 ## Software versions
-* `python>=3.7`
-* `pycsep=0.5.2`
+* `python>=3.11`
+* `pycsep=0.6.3`
 
 To obtain the environment used for publishing this manuscript use [Docker](#easy-mode-using-docker). Advanced users can recreate the environment using `conda` running on Ubuntu 20.04 LTS.
-
-## Computational effort
-
-On a recent (2021) laptop with a 4.6GHz Intel i7, the total runtimes on Windows were as follows:
- * _lightweight_ version in Docker and native OS: ~2min
- * _full_ version:
-   * in Docker: ~1h 40min (~3h on a late 2017 MacBook Pro with a 2.9GHz Intel i7)
-   * in native OS: ~1h 5min
-
-The Docker environment introduces latency with I/O operations (only noticible when reading the catalog-based UCERF3-ETAS forecast file, and in some computing environments).
 
 
 ## References

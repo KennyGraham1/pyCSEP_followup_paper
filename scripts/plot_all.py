@@ -61,9 +61,12 @@ def verify_file_manifest():
     # Expected files for the 'full' and 'light' versions, full is light + full
     file_manifest = {
         'full': [
-            '../forecasts/config.json',
-            '../forecasts/m71_event.json',
-            '../forecasts/results_complete.bin.gz'
+            '../data/area.dat'
+            '../data/GEAR1.dat'
+            '../data/NZHM_5year_rates-fromXML.dat'
+            '../data/nz5yrppe_c.dat'
+            '../data/nz5yrsup_c.dat'
+            '../data/GeoNet_catalog2021.txt'
         ]
     }
 
@@ -91,7 +94,7 @@ def main(version):
     print('')
     print('Generating Fig. 1')
     print('=================')
-    plot_figure2.main()
+    plot_fig_1.main()
 
     if ver == 'full':
         print('')

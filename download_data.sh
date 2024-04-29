@@ -2,6 +2,7 @@
 set -e
 
 # DO NOT CHANGE THIS
+This is the record of for zenodo
 record_id=XXXX
 
 # usage information
