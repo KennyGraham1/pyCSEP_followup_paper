@@ -12,7 +12,7 @@ then
 
     where:
        -h        Show help message
-       --full    Download all files from reproducibilty package. Default is lightweight version.
+       --full    Download all files from reproducibilty package. Default is fulll version.
 
     More information available in the README file.
     "

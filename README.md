@@ -1,15 +1,12 @@
 # Reproducing pyCSEP: A Software Toolkit for Earthquake Forecast Developers
 
 [![Software](https://zenodo.org/badge/DOI/10.5281/zenodo.6626265.svg)](https://doi.org/10.5281/zenodo.6626265)
-[![Data](https://zenodo.org/badge/DOI/10.5281/zenodo.5777992.svg)](https://doi.org/10.5281/zenodo.5777992)
 
-A reproducibility package contains the code and data needed to recreate figures from a published article (Krafczyk
-et al., 2021). This reproducibility package provides an introduction to pyCSEP and acts as an example for future publications. We refer readers interested in creating their own reproducibility packages to Krafczyk et al. (2021).
 
-We provide the user with options to download a _full_ or _lightweight_ version of the reproducibility package from Zenodo. The _full_ version of the package recreates Figs. 2‒7 from the manuscript. The lightweight version omits Fig. 3 and Fig. 6, because they require a ~24Gb download for the UCERF3-ETAS forecast, which can take a while (~3h) depending on the connection to Zenodo. These figures also require the most computing time to recreate (see [Computational effort](#computational-effort)).
+A reproducibility package contains the code and data needed to replicate the figures in pyCSEP: An Enhanced Python Toolkit for Earthquake Forecast Developers
 
-We recommend that users begin with the _lightweight_ version of the package for a quick introduction to pyCSEP and to use the
-_full_ version to learn about evaluating catalog-based forecasts or working with UCERF3-ETAS forecasts. The package is configured to provide turn-key reproducibility of the published results. Users can also interact with scripts to individually recreate each figure.
+We provide the user with options to run Jupyter Notebooks
+
 
 ## Table of contents
 
@@ -46,10 +43,9 @@ Now you have two options how to run the package:
  * [Easy-mode using Docker](#easy-mode-using-docker)
  * [Using a conda environment](#using-a-conda-environment)
 
-The easiest way to run the reproducibility package is to run the _lightweight_ version of the package in an environment provided
-by Docker. If you are interested in working with pyCSEP in more detail, we recommend that you install pyCSEP in a `conda` environment in the native OS.
+The easiest way to run the reproducibility package is to run the version of the package in an environment provided by Docker. If you are interested in working with pyCSEP in more detail, we recommend that you install pyCSEP in a `conda` environment.
 
-For both options we have accompanying scripts that work both under Linux/macOS or Windows.
+We have accompanying scripts that work under Linux/macOS.
 
 #### Easy mode using Docker
 
@@ -61,10 +57,7 @@ If on Linux/maxOS, call in the Terminal/Console:
 ```
 ./run_all.sh
 ```
-If on Windows, call in the Command Prompt/Powershell:
-```
-.\run_all.bat
-```
+
 
 This step does the following things: (1) download and verify the checksum of the downloaded
 data; (2) build a docker image with the computational environment; and (3) run the reproducibility package.
@@ -73,19 +66,12 @@ To reproduce the _full_ version, call:
 > ```
 > ./run_all.sh --full
 > ```
-> or (if on Windows):
-> ```
-> .\run_all.bat --full
-> ```
+
 
 When finished, the figures will be stored in `./output`. These can be compared against the expected results that are found in the `expected_results` directory.
 
 The `start_docker.sh` or `start_docker.bat` scripts provide an interactive terminal to re-create individual figures. See [below](#reproduce-figures-individually) for instructions.
 
-> Note: For best performance on Windows 10/11, Docker should be used with the WSL2 backend instead
-of the legacy Hyper-V backend---provided your hardware supports it. This can be configured in
-Docker's Settings > General > 'Use the WSL 2 based engine'. For more information and how to enable the WSL2 feature
-on your Windows 10/11, see [Docker Desktop WSL 2 backend](https://docs.docker.com/desktop/windows/wsl).
 
 > Note: If you are running Docker on MacOS you might run into permission errors when trying to start (or run) the Docker container. To fix this, manually create the `output` (eg `cd output` and add these to the Docker host.)
 
@@ -107,10 +93,6 @@ conda install --channel conda-forge pycsep=0.6.3
 Download data from Zenodo:
 ```
 ./download_data.sh
-```
-or (if on Windows):
-```
-.\download_data.bat
 ```
 
 > Note: to download the _'full'_ version, append ` --full` to the command (see [above](#easy-mode-using-docker))

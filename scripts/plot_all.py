@@ -55,10 +55,10 @@ def verify_file_manifest():
     """ Checks directories for data and forecasts to determine which version of the reproducibility package to run.
 
         Returns:
-            out (str): 'full' or 'light'
+            out (str): 'full' 
     """
 
-    # Expected files for the 'full' and 'light' versions, full is light + full
+    # Expected files for the 'full' versions
     file_manifest = {
         'full': [
             '../data/area.dat'
