@@ -1,11 +1,11 @@
 # Reproducing pyCSEP: A Software Toolkit for Earthquake Forecast Developers
 
-[![Software](https://zenodo.org/badge/DOI/10.5281/zenodo.6626265.svg)](https://doi.org/10.5281/zenodo.6626265)
+[![Software](https://zenodo.org/badge/DOI/10.5281/zenodo.11082607.svg)](https://doi.org/10.5281/zenodo.11082607)
 
 
-A reproducibility package contains the code and data needed to replicate the figures in pyCSEP: An Enhanced Python Toolkit for Earthquake Forecast Developers
+This reproducibility package contains the code and data needed to replicate the figures in the acticle *pyCSEP: An Enhanced Python Toolkit for Earthquake Forecast Developers*
 
-We provide the user with options to run Jupyter Notebooks
+We provide the user with options to run Jupyter Notebooks, scripts and create docker image.
 
 
 ## Table of contents

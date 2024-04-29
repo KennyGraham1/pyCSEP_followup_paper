@@ -3,7 +3,7 @@ set -e
 
 # DO NOT CHANGE THIS
 This is the record of for zenodo
-record_id=XXXX
+record_id=11082607
 
 # usage information
 if [ "$1" == "-h" ]
