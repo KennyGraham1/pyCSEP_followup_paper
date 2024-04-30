@@ -5,7 +5,7 @@
 
 This reproducibility package contains the code and data needed to replicate the figures in the acticle *pyCSEP: An Enhanced Python Toolkit for Earthquake Forecast Developers*
 
-We provide the user with options to run Jupyter Notebooks, scripts and create docker image.
+We provide options for Jupyter Notebooks; which provide an interactive environment for running code, visualizing the forecast.  Standalone scripts; for more straightforward runing of the codes. Code to create Docker images; enabling users to package the codes, dependencies, and environments into portable containers. This capability ensures consistency across different computing environments and simplifies deployment processes.
 
 
 ## Table of contents
