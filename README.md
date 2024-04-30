@@ -3,9 +3,9 @@
 [![Software](https://zenodo.org/badge/DOI/10.5281/zenodo.11082607.svg)](https://doi.org/10.5281/zenodo.11082607)
 
 
-This reproducibility package contains the code and data needed to replicate the figures in the acticle *pyCSEP: An Enhanced Python Toolkit for Earthquake Forecast Developers*
+This reproducibility package provides all the necessary code and data required to replicate the figures presented in the article *pyCSEP: An Enhanced Python Toolkit for Earthquake Forecast Developers*. We aim to facilitate transparency and allow researchers to replicate our findings, experiment with modifications, and further understand the functionalities and capabilities of the pyCSEP toolkit.
 
-We provide options for Jupyter Notebooks; which provide an interactive environment for running code, visualizing the forecast.  Standalone scripts; for more straightforward runing of the codes. Code to create Docker images; enabling users to package the codes, dependencies, and environments into portable containers. This capability ensures consistency across different computing environments and simplifies deployment processes.
+We provide options for Jupyter Notebooks; which provide an interactive environment for running code, visualizing the forecast.  Standalone scripts; for more straightforward runing of the codes. Code to create Docker images; enabling users to package the scripts, codes, dependencies, and environments into portable containers. This capability ensures consistency across different computing environments.
 
 
 ## Table of contents
