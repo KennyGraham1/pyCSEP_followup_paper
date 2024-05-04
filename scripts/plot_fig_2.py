@@ -193,7 +193,7 @@ def main():
 
 
     cell_areaNZ = bulk_areaNZ[:,3]
-    b_NZ = 1.1
+    b_NZ = 1.0
     dh = 0.1
     offset = dh / 2
     lonsNZ = bulk_dataNZ[:,1] - offset
