@@ -361,10 +361,11 @@ def main():
         # Differentiate between N-tests and other consistency tests
         
         if test_results[0].name == 'NBD N-Test' or test_results[0].name == 'Poisson N-Test':
-            legend_elements = [matplotlib.lines.Line2D([0], [0], marker='o', color='red', lw=0, label=r'p < 10e-5', markersize=15, markeredgecolor='k'),
-                            matplotlib.lines.Line2D([0], [0], marker='o', color='#FF7F50', lw=0, label=r'10e-5 $\leq$ p < 10e-4', markersize=15, markeredgecolor='k'),
-                            matplotlib.lines.Line2D([0], [0], marker='o', color='gold', lw=0, label=r'10e-4 $\leq$ p < 10e-3', markersize=15, markeredgecolor='k'),
-                            matplotlib.lines.Line2D([0], [0], marker='o', color='white', lw=0, label=r'10e-3 $\leq$ p < 0.0125', markersize=15, markeredgecolor='k'),
+            legend_elements = [
+                            # matplotlib.lines.Line2D([0], [0], marker='o', color='red', lw=0, label=r'p < 10e-5', markersize=15, markeredgecolor='k'),
+                            # matplotlib.lines.Line2D([0], [0], marker='o', color='#FF7F50', lw=0, label=r'10e-5 $\leq$ p < 10e-4', markersize=15, markeredgecolor='k'),
+                            # matplotlib.lines.Line2D([0], [0], marker='o', color='gold', lw=0, label=r'10e-4 $\leq$ p < 10e-3', markersize=15, markeredgecolor='k'),
+                            # matplotlib.lines.Line2D([0], [0], marker='o', color='white', lw=0, label=r'10e-3 $\leq$ p < 0.0125', markersize=15, markeredgecolor='k'),
                             matplotlib.lines.Line2D([0], [0], marker='o', color='skyblue', lw=0, label=r'0.0125 $\leq$ p < 0.025', markersize=15, markeredgecolor='k'),
                             matplotlib.lines.Line2D([0], [0], marker='o', color='blue', lw=0, label=r'p $\geq$ 0.025', markersize=15, markeredgecolor='k')]
             
@@ -458,10 +459,10 @@ def main():
             if show_bar==True:   
             
                 legend_elements = [
-                matplotlib.lines.Line2D([0], [0], marker='o', color='red', lw=0, label=r'p < 10e-5', markersize=15, markeredgecolor='k'),
-                matplotlib.lines.Line2D([0], [0], marker='o', color='#FF7F50', lw=0, label=r'10e-5 $\leq$ p < 10e-4', markersize=15, markeredgecolor='k'),
-                matplotlib.lines.Line2D([0], [0], marker='o', color='gold', lw=0, label=r'10e-4 $\leq$ p < 10e-3', markersize=15, markeredgecolor='k'),
-                matplotlib.lines.Line2D([0], [0], marker='o', color='white', lw=0, label=r'10e-3 $\leq$ p < 0.025', markersize=15, markeredgecolor='k'),
+                # matplotlib.lines.Line2D([0], [0], marker='o', color='red', lw=0, label=r'p < 10e-5', markersize=15, markeredgecolor='k'),
+                # matplotlib.lines.Line2D([0], [0], marker='o', color='#FF7F50', lw=0, label=r'10e-5 $\leq$ p < 10e-4', markersize=15, markeredgecolor='k'),
+                # matplotlib.lines.Line2D([0], [0], marker='o', color='gold', lw=0, label=r'10e-4 $\leq$ p < 10e-3', markersize=15, markeredgecolor='k'),
+                # matplotlib.lines.Line2D([0], [0], marker='o', color='white', lw=0, label=r'10e-3 $\leq$ p < 0.025', markersize=15, markeredgecolor='k'),
                 matplotlib.lines.Line2D([0], [0], marker='o', color='skyblue', lw=0, label=r'0.025 $\leq$ p < 0.05', markersize=15, markeredgecolor='k'),
                 matplotlib.lines.Line2D([0], [0], marker='o', color='blue', lw=0, label=r'p $\geq$ 0.05', markersize=15, markeredgecolor='k')]
 
